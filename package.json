@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "npm run serve",
-    "serve": "npm install cpy-cli -g && npm install http-server -g && npm install && http-server ./www/ -o -c 1 -a 0.0.0.0 -p $(node -e process.env.PORT || 5000)",
+    "serve": "npm install cpy-cli -g && npm install http-server -g && npm install && http-server ./www/ -o -c 1 -a 0.0.0.0 -p $(node -e 'console.log(process.env.PORT || 5000)')",
     "postinstall": "npm install cpy-cli -g && cpy --flat ./node_modules/framework7-icons/fonts/*.* ./www/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./www/fonts/ && cpy --flat ./node_modules/framework7/*.js ./www/framework7 && cpy --flat ./node_modules/framework7/*.css ./www/framework7 && cpy --flat ./node_modules/framework7/*.map ./www/framework7"
   },
   "browserslist": [
