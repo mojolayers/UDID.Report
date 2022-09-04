@@ -1,0 +1,20 @@
+{
+  "cwd": "/Users/Joe/Desktop/Projects/MojoLayers/UDID.Report",
+  "type": [
+    "pwa",
+    "web"
+  ],
+  "name": "UDID.Report",
+  "framework": "core",
+  "template": "single-view",
+  "bundler": false,
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false
+}
