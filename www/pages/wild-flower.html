@@ -1,0 +1,18 @@
+<template>
+    <!-- TODO: Enabled/Disable Navbar based on debug status for this page. -->
+    <div class="page no-navbar">
+        <div class="page-content">
+            <div class="wild-flower-content">
+                <p>Your UDID Is:</p>
+                <h3>${deviceProfile.udid}</h3>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+    export default(props) => {
+        const deviceProfile = props.deviceProfile;
+
+        return $render;
+    }
+</script>
