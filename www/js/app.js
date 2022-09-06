@@ -41,3 +41,63 @@ function clearCache() {
     }, 300);
   }, 2000)
 }
+
+$(document).on('page:init', '.page[data-name="paper_plane"]', function (e) {
+  const cookie = Object.fromEntries(document.cookie.split('; ').map(c => c.split('=')));
+
+  // Check if device is enrolled via cookies.
+  if (!("udid" in cookie)) {
+    // No Exisiting Enrollment Found.
+    $('.isEnrolled').text("Not Enrolled");
+  } else {
+    $('.isEnrolled').text("Enrolled");
+  }
+
+  $('.isEnrolled').text("Not Enrolled");
+});
+
+function generateUDID(deviceType) {
+  /*
+    Legend:
+    | . | Replace with Random Number |
+    | , | Replace with Random Letter |
+  */
+  const udidTemplate = "0000....-00.,..,...,,...,";
+  var udid = "0000" + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    "-00" + 
+    generateRandom(0) + 
+    generateRandom('') + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom('') + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom('') + 
+    generateRandom('') + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom(0) + 
+    generateRandom('');
+  udid = udid.toUpperCase();
+  return udid;
+}
+
+function generateRandom(type) {
+  console.log(typeof type);
+  const generate = typeof type;
+  if (generate == "number") {
+    return Math.floor(Math.random() * 10);
+  } else if (generate == "string") {
+    const alphabet = "abcdef";
+
+    return alphabet[Math.floor(Math.random() * alphabet.length)];
+  } else {
+    console.log('Unknown Type');
+    return "0";
+  }
+}

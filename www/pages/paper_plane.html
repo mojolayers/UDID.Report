@@ -1,4 +1,4 @@
-<div class="page" data-name="udid">
+<div class="page" data-name="paper_plane">
     <div class="navbar">
         <div class="navbar-bg"></div>
         <div class="navbar-inner sliding">
@@ -15,21 +15,27 @@
         <div class="block-title">Fake Enrollment:</div>
         <div class="list">
             <ul>
+                <li class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">Enrollment Status</div>
+                        <div class="item-after isEnrolled">Not Enrolled</div>
+                    </div>
+                </li>
                 <li class="item-content item-input item-input-with-info">
                     <div class="item-inner">
                         <div class="item-title item-label">UDID</div>
                         <div class="item-input-wrap">
-                            <input type="text" placeholder="Type a valid UDID." required="required" validate="validate" pattern="(0000[\d]{4}-00[A-Fa-f\d]+)|([a-fA-F\d]{40})"/>
+                            <input type="text" class="udid-input" placeholder="Type a valid UDID." required="required" validate="validate" pattern="(0000[\d]{4}-00[A-Fa-f\d]+)|([a-fA-F\d]{40})"/>
                             <span class="input-clear-button"></span>
                             <div class="item-input-info"></div>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <a href="/paper_plane?udid=000023-000C32D756CE324B" class="list-button external color-yellow">Generate UDID</a>
+                    <a href="#" class="list-button color-yellow" onclick="$('.udid-input').val(generateUDID());">Generate UDID</a>
                 </li>
                 <li>
-                    <a href="/paper_plane?udid=000023-000C32D756CE324B" class="list-button external color-red">Fake Enroll</a>
+                    <a href="#" onclick="const udid = $('.udid-input').val();window.open('/paper_plane?udid='+udid,'_self');" class="list-button color-red">Fake Enroll</a>
                 </li>
             </ul>
         </div>

@@ -6,7 +6,8 @@ var routes = [
   },
   {
     path: '/paper-plane/',
-    url: './pages/udid.html',
+    name: 'paper_plane',
+    url: './pages/paper_plane.html',
   },
   {
     path: '/emelda/',
