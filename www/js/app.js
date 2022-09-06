@@ -25,3 +25,15 @@ var app = new Framework7({
 
 // Constants
 const debug = true;
+
+function clearCache() {
+  app.dialog.progress('Clearing Caches / Updating Version');
+  setTimeout(function() {
+    caches.keys().then(function(names) {
+      for (let name of names) {
+        caches.delete(name);
+      }
+    });
+    app.dialog.close();
+  }, 2000)
+}
