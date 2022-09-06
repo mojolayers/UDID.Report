@@ -1,5 +1,13 @@
 #!/bin/bash
 
+## Randomise Profile UUID ##
+UUID=$(od -x /dev/urandom | head -1 | awk '{OFS="-"; print $2$3,$4,$5,$6,$7$8$9}')
+SEARCH="REPLACEME"
+TEMPNAME="temp.mobileconfig"
+# cp ./paper_plane.mobileconfig ./temp.mobileconfig
+
+# sed -i "s/$SEARCH/$UUID/gi" $TEMPNAME
+
 certs="./ssl_certificates"
 
 openssl smime \

@@ -22,7 +22,7 @@
     <key>PayloadIdentifier</key>
     <string>report.udid.paper_plane</string>
     <key>PayloadDescription</key>
-    <string>This temporary profile will be used to find and display your current device's UDID.</string>
+    <string>This temporary profile is designed to retrieve your device profile and share it securely with UDID.Report.</string>
     <key>PayloadType</key>
     <string>Profile Service</string>
 </dict>
