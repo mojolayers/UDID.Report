@@ -42,25 +42,23 @@ function clearCache() {
   }, 2000)
 }
 
-$(document).on('page:init', '.page[data-name="paper_plane"]', function (e) {
+$(document).on('page:beforein', '.page[data-name="paper_plane"]', function (e) {
   const cookie = Object.fromEntries(document.cookie.split('; ').map(c => c.split('=')));
-
   // Check if device is enrolled via cookies.
   if (!("udid" in cookie)) {
     // No Exisiting Enrollment Found.
     $('.isEnrolled').text("Not Enrolled");
   } else {
     $('.isEnrolled').text("Enrolled");
+    $('.udid-input').val(cookie['udid']);
   }
-
-  $('.isEnrolled').text("Not Enrolled");
 });
 
 function generateUDID(deviceType) {
   /*
     UDID Template:
     0000....-00.,..,...,,...,
-    
+
     Legend:
     | . | Replace with Random Number |
     | , | Replace with Random Letter |
