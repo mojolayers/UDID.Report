@@ -18,19 +18,20 @@ exports.paper_plane = function(req, res){
     var query = url_parts.query;
     
     var tudid = query.udid;
-    if (tudid && extractValidUdid(tudid)) // If it's in the query, store it and redirect (so the user doesn't see the UDID being sent in the URL)
+    // && extractValidUdid(tudid)
+    if (tudid) // If it's in the query, store it and redirect (so the user doesn't see the UDID being sent in the URL)
     {
-        res.cookie('newudid', query.udid, 
+        res.cookie('udid', query.udid, 
         { 
             maxAge: 1000*60*60*24*365,
             httpOnly: false,
             secure: process.env.NODE_ENV === 'production'? true: false
         });
-        res.redirect('/enrollment');
+        res.redirect('/#!/udid');
     }
     else
     {
-        var cookie = req.cookies.newudid;
+        var cookie = req.cookies.udid;
         if (cookie && extractValidUdid(cookie)) {
             // Found the cookie, let's render it
             // TODO: Connect to F7 UDID Page.

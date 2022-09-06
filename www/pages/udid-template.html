@@ -1,20 +1,33 @@
 <template>
-    <div class="page no-navbar">
-      <div class="page-content">
-        <div class="block-title">
-          Your UDID Is:
+    <!-- TODO: Enabled/Disable Navbar based on debug status for this page. -->
+    <!-- <div class="page no-navbar"> -->
+    <div class="page">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Back</span>
+                    </a>
+                </div>
+                <div class="title">Paper Plane (Enrollment Service)</div>
+            </div>
         </div>
-        <center>
-            <h3>${deviceProfile.udid}</h3>
-        </center>
-      </div>
+        <div class="page-content">
+            <div class="block-title">
+                Your UDID Is:
+            </div>
+            <center>
+                <h3>${deviceProfile.udid}</h3>
+            </center>
+        </div>
     </div>
-  </template>
-  <script>
-    export default (props) => {
-      const deviceProfile = props.deviceProfile;
-  
-      return $render;
+</template>
+<script>
+    export default(props) => {
+        const deviceProfile = props.deviceProfile;
+
+        return $render;
     }
-  </script>
-  
+</script>

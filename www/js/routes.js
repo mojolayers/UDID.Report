@@ -10,11 +10,11 @@ var routes = [
     url: './pages/about.html',
   },
   {
-    path: '/emelda/',
+    path: '/paper-plane/',
     url: './pages/udid.html',
   },
   {
-    path: '/emelda-test/',
+    path: '/emelda/',
     async: function ({ router, to, resolve }) {
       // Access app instance
       var app = router.app;

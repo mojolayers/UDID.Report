@@ -1,24 +1,48 @@
-<div class="page no-navbar" data-name="udid">
-    <!-- <div class="navbar">
-      <div class="navbar-bg"></div>
-      <div class="navbar-inner sliding">
-        <div class="left">
-          <a href="#" class="link back">
-            <i class="icon icon-back"></i>
-            <span class="if-not-md">Back</span>
-          </a>
+<div class="page" data-name="udid">
+    <div class="navbar">
+        <div class="navbar-bg"></div>
+        <div class="navbar-inner sliding">
+            <div class="left">
+                <a href="#" class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Back</span>
+                </a>
+            </div>
+            <div class="title">Paper Plane (Enrollment Service)</div>
         </div>
-        <div class="title">UDID</div>
-      </div>
-    </div> -->
-    <div class="page-content">
-      <div class="block-title">Manual Enrollment:</div>
-      <div class="block block-strong">
-        <p>Set UDID String</p>
-      </div>
-      <div class="block">
-        <p>Device.Observer Partnership info</p>
-      </div>
     </div>
-  </div>
-  
+    <div class="page-content">
+        <div class="block-title">Fake Enrollment:</div>
+        <div class="list">
+            <ul>
+                <li class="item-content item-input item-input-with-info">
+                    <div class="item-inner">
+                        <div class="item-title item-label">UDID</div>
+                        <div class="item-input-wrap">
+                            <input type="text" placeholder="Type a valid UDID." required="required" validate="validate" pattern="(0000[\d]{4}-00[A-Fa-f\d]+)|([a-fA-F\d]{40})"/>
+                            <span class="input-clear-button"></span>
+                            <div class="item-input-info"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="/paper_plane?udid=000023-000C32D756CE324B" class="list-button external color-yellow">Generate UDID</a>
+                </li>
+                <li>
+                    <a href="/paper_plane?udid=000023-000C32D756CE324B" class="list-button external color-red">Fake Enroll</a>
+                </li>
+            </ul>
+        </div>
+        <div class="block-title">Real Enrollment:</div>
+        <div class="list">
+            <ul>
+                <a href="#" class="list-button external">Enroll Device (.mobileconfig)</a>
+            </ul>
+            <div class="block-footer">By using the staging version of UDID.Report, you agree to using a canary version of Paper Plane<sup>[1]</sup>.</div>
+        </div>
+        <div class="block">
+            <p>Device.Observer Partnership info</p>
+            <p><sup>[1] Paper Plane is one of the utilities used in ensuring the smooth operation of UDID.Report</sup></p>
+        </div>
+    </div>
+</div>
