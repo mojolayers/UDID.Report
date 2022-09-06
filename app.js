@@ -16,7 +16,9 @@ var cons = require('consolidate');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3001);
+const argv = require('minimist')(process.argv.slice(2));
+const port = argv['_'][0];
+app.set('port', port || 3001);
 
 // Setup our View Engine
 app.engine('html', cons.swig)
