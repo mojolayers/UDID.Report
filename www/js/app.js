@@ -5,8 +5,8 @@ var app = new Framework7({
   name: 'UDID.Report', // App name
   theme: 'auto', // Automatic theme detection
   el: '#app', // App root element
+  autoDarkMode: true, // Automatically apply dark mode based on system setting.
 
-  
   // App store
   store: store,
   // App routes
