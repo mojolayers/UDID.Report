@@ -19,7 +19,7 @@ exports.paper_plane = function(req, res){
     
     var tudid = query.udid;
     // && extractValidUdid(tudid)
-    if (tudid) // If it's in the query, store it and redirect (so the user doesn't see the UDID being sent in the URL)
+    if (tudid && extractValidUdid(tudid)) // If it's in the query, store it and redirect (so the user doesn't see the UDID being sent in the URL)
     {
         res.cookie('udid', query.udid, 
         { 
