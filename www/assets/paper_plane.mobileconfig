@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <dict>
+        <key>URL</key>
+	<string>https://staging.udid.report/validate</string>
+        <key>DeviceAttributes</key>
+        <array>
+            <string>UDID</string>
+        </array>
+    </dict>
+    <key>PayloadOrganization</key>
+    <string>com.mojolayers.udid_report</string>
+    <key>PayloadDisplayName</key>
+    <string>[Paper Plane] UDID.Report Temporary Profile</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadUUID</key>
+    <string>0092ebbc-8bd6-4642-b24c-e8bd1ba85716</string>
+    <key>PayloadIdentifier</key>
+    <string>com.mojolayers.profile-service</string>
+    <key>PayloadDescription</key>
+    <string>This temporary profile will be used to find and display your current device's UDID.</string>
+    <key>PayloadType</key>
+    <string>Profile Service</string>
+</dict>
+</plist>
