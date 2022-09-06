@@ -10,6 +10,10 @@ html { font-family: 'Inter', sans-serif; }
   html { font-family: 'Inter var', sans-serif; }
 }
 
+.wild-flower {
+    /* position: relative; */
+}
+
 .wild-flower, .wild-flower-content, .wild-flower-branding {
     display: flex;
     flex-direction: row;
@@ -18,8 +22,18 @@ html { font-family: 'Inter', sans-serif; }
     align-items: center;
 }
 
+.wild-flower-branding {
+    /* padding-top: 20%; */
+}
+
+.wild-flower-content {
+    width: 100%;
+    margin: 50vh auto 0;
+    transform: translateY(-50%);
+}
+
 /* Your UDID Is: */
-.wild-flower .wild-flower-content p:first-child {
+.wild-flower .wild-flower-content p:nth-child(2) {
     font-style: normal;
     font-weight: 700;
     font-size: 26px;
@@ -38,7 +52,7 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 /* Device.Observer Notice */
-.wild-flower .wild-flower-content p:nth-child(3) {
+.wild-flower .wild-flower-content p:nth-child(4) {
     width: 70%;
     font-style: normal;
     font-weight: 700;
