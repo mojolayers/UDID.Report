@@ -27,7 +27,7 @@ exports.paper_plane = function(req, res){
             httpOnly: false,
             secure: process.env.NODE_ENV === 'production'? true: false
         });
-        res.redirect('/#!/udid');
+        res.redirect('/');
     }
     else
     {
@@ -37,7 +37,7 @@ exports.paper_plane = function(req, res){
             // TODO: Connect to F7 UDID Page.
             // IDEA: Might be able to use the COOKIE to display it in the static rendered pages??
             // res.render('/udid', { udid: cookie, title: 'udid.fyi'}); // Render UDID Page via PUG
-            res.redirect('/udid');
+            res.redirect('/');
         }
         else {
             // No cookie, redirect back to home page
