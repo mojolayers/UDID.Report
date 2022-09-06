@@ -28,12 +28,16 @@ const debug = true;
 
 function clearCache() {
   app.dialog.progress('Clearing Caches / Updating Version');
-  setTimeout(function() {
+  setTimeout(() => {
     caches.keys().then(function(names) {
       for (let name of names) {
         caches.delete(name);
       }
     });
     app.dialog.close();
+    app.dialog.progress('Now Reloading')
+    setTimeout(() => {
+      location.reload();
+    }, 300);
   }, 2000)
 }
