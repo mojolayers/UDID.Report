@@ -58,11 +58,13 @@ $(document).on('page:init', '.page[data-name="paper_plane"]', function (e) {
 
 function generateUDID(deviceType) {
   /*
+    UDID Template:
+    0000....-00.,..,...,,...,
+    
     Legend:
     | . | Replace with Random Number |
     | , | Replace with Random Letter |
   */
-  const udidTemplate = "0000....-00.,..,...,,...,";
   var udid = "0000" + 
     generateRandom(0) + 
     generateRandom(0) + 
