@@ -14,7 +14,7 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 /* Your UDID Is: */
-.wild-flower-content p {
+.wild-flower-content p:first-child {
     font-style: normal;
     font-weight: 700;
     font-size: 26px;
@@ -23,11 +23,23 @@ html { font-family: 'Inter', sans-serif; }
     color: #FFFFFF;
 }
 
+/* UDID String: */
 .wild-flower-content h3 {
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 19px;
     line-height: 23px;
     color: #ADADAD;
+}
+
+/* Device.Observer Notice */
+.wild-flower-content p:nth-child(3) {
+    width: 70%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #676767;
 }
