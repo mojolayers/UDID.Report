@@ -6,11 +6,17 @@ var app = new Framework7({
   theme: 'auto', // Automatic theme detection
   el: '#app', // App root element
 
-
+  
   // App store
   store: store,
   // App routes
   routes: routes,
+  // App Views
+  view: {
+    browserHistory: true,
+    browserHistoryOnLoad: true,
+    browserHistoryInitialMatch: true,
+  },
   // Register service worker
   serviceWorker: {
     path: '/service-worker.js',

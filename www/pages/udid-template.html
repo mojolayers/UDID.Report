@@ -1,0 +1,20 @@
+<template>
+    <div class="page no-navbar">
+      <div class="page-content">
+        <div class="block-title">
+          Your UDID Is:
+        </div>
+        <center>
+            <h3>${deviceProfile.udid}</h3>
+        </center>
+      </div>
+    </div>
+  </template>
+  <script>
+    export default (props) => {
+      const deviceProfile = props.deviceProfile;
+  
+      return $render;
+    }
+  </script>
+  

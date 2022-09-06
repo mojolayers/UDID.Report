@@ -5,64 +5,51 @@ var routes = [
     url: './index.html',
   },
   {
+    // Might delete this route as if it doesn't implement well.
     path: '/about/',
     url: './pages/about.html',
   },
   {
-    path: '/form/',
-    url: './pages/form.html',
-  },
-
-
-  {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    componentUrl: './pages/dynamic-route.html',
+    path: '/emelda/',
+    url: './pages/udid.html',
   },
   {
-    path: '/request-and-load/user/:userId/',
+    path: '/emelda-test/',
     async: function ({ router, to, resolve }) {
-      // App instance
+      // Access app instance
       var app = router.app;
+      
+      // Access Cookies
+      const cookie = Object.fromEntries(document.cookie.split('; ').map(c => c.split('=')));
+      var udidCookie = "";
+      var isEnrolled = false;
 
-      // Show Preloader
-      app.preloader.show();
+      // Check if device is enrolled via cookies.
+      if (!("udid" in cookie)) {
+        // No Exisiting Enrollment Found.
+        udidCookie = 'No UDID Saved, please Enroll.';
+      } else {
+        udidCookie = cookie['udid'];
+        isEnrolled = true;
+      }
 
-      // User ID from request
-      var userId = to.params.userId;
+      var deviceProfile = {
+        id: 0,
+        udid: udidCookie,
+        isEnrolled: isEnrolled
+      };
 
-      // Simulate Ajax Request
-      setTimeout(function () {
-        // We got user data from request
-        var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
-          links: [
-            {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
-            },
-            {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
-            },
-          ]
-        };
-        // Hide Preloader
-        app.preloader.hide();
-
-        // Resolve route to load page
-        resolve(
-          {
-            componentUrl: './pages/request-and-load.html',
-          },
-          {
-            props: {
-              user: user,
-            }
+      // Resolve route to load page
+      resolve(
+        {
+          componentUrl: './pages/udid-template.html',
+        },
+        {
+          props: {
+            deviceProfile: deviceProfile,
           }
-        );
-      }, 1000);
+        }
+      );
     },
   },
   // Default route (404 page). MUST BE THE LAST
