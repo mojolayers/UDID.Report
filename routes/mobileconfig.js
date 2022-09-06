@@ -49,7 +49,7 @@ exports.validate = function(req, res){
     var udid = extractValidUdid(req.body.toString())
 
     if (udid) {
-        res.redirect(301,'/enrollment?udid=' + udid);
+        res.redirect(301,'/paper_plane?udid=' + udid);
     }
     else {
         res.status(400)
