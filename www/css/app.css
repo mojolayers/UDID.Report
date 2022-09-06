@@ -1,4 +1,9 @@
 /* Your app custom styles here */
+:root .dark, :root.dark {
+    --f7-page-bg-color: #111;
+    --f7-bars-bg-color: #161616;
+    --f7-bars-bg-color-rgb: 2,2,2;
+}
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {
