@@ -74,7 +74,8 @@ var routes = [
       var deviceProfile = {
         id: 0,
         udid: udidCookie,
-        isEnrolled: isEnrolled
+        isEnrolled: isEnrolled,
+        prefersColorScheme: app.device.prefersColorScheme(),
       };
 
       // Resolve route to load page

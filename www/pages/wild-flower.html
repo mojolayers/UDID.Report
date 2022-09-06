@@ -4,7 +4,7 @@
         <div class="page-content">
             <div class="wild-flower">
                 <div class="wild-flower-branding">
-                    <img src="../assets/logo.png" alt="UDID[dot]Report" width="33.33%" />
+                    <img src="${imagePath}" alt="UDID[dot]Report" width="33.33%" />
                 </div>
                 <div class="wild-flower-content">
                     <p>Your UDID Is:</p>
@@ -18,6 +18,11 @@
 <script>
     export default(props) => {
         const deviceProfile = props.deviceProfile;
+        const prefersColorScheme = deviceProfile.prefersColorScheme;
+        var imagePath = "../assets/logo.png"
+        if (prefersColorScheme == "dark") {
+            imagePath = "../assets/logo_dark.png"
+        }
 
         return $render;
     }
