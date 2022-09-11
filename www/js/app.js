@@ -125,34 +125,49 @@ function readCookie(name) {
 
 
 async function setUDIDFromCookie() {
-  caches.open("udidURL").then(function (cache) {
+  // caches.open("udidURL").then(function (cache) {
+  caches.open("udid").then(function (cache) {
     console.log("Set Cookie");
-    return cache.add([window.location.origin + "/cookie"]);
+    // return cache.add([window.location.origin + "/cookie"]);
+    return cache.add([readCookie('udid')]);
   });
 }
+// async function setUDIDToCookie() {
+//   var udid = readCookie("udid-local");
+//   caches.open("udidURL").then((cache) => {
+//     cache
+//       .match(window.location.origin + "/cookie", {
+//         ignoreSearch: true,
+//       })
+//       .then((response) => response.json())
+//       .then((body) => {
+//         console.log('Ln 142');
+//         console.log(udid);
+//         if (body.udid && udid == undefined) {
+//           /// and if cookie is empty
+//           console.log(body.udid);
+//           createCookie("udid-local", body.udid, 3000);
+//         } else {
+//           console.log('UDID not empty');
+//         }
+//       })
+//       .catch((err) => {
+//         console.log("Not cached yet");
+//       });
+//   });
+// }
+
 async function setUDIDToCookie() {
-  var udid = readCookie("udid-local");
-  caches.open("udidURL").then((cache) => {
-    cache
-      .match(window.location.origin + "/cookie", {
-        ignoreSearch: true,
+  caches.keys().then((keyList) =>
+    Promise.all(
+      keyList.map((key) => {
+        // if (!cacheAllowlist.includes(key)) {
+        //   return console.log(key);
+        // }
+        return console.log(key);
       })
-      .then((response) => response.json())
-      .then((body) => {
-        console.log('Ln 142');
-        console.log(udid);
-        if (body.udid && udid == undefined) {
-          /// and if cookie is empty
-          console.log(body.udid);
-          createCookie("udid-local", body.udid, 3000);
-        } else {
-          console.log('UDID not empty');
-        }
-      })
-      .catch((err) => {
-        console.log("Not cached yet");
-      });
-  });
+    )
+  );
 }
 
 setTimeout(() => {
