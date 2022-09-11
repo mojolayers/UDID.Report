@@ -101,3 +101,63 @@ function generateRandom(type) {
     return "0";
   }
 }
+
+function createCookie(name, value, days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    var expires = "; expires=" + date.toGMTString();
+  } else var expires = "";
+  document.cookie =
+    name + "=" + value + expires + "; path=/;";
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return undefined;
+}
+
+
+async function setUDIDFromCookie() {
+  caches.open("udidURL").then(function (cache) {
+    console.log("Set Cookie");
+    return cache.add([window.location.origin + "/cookie"]);
+  });
+}
+async function setUDIDToCookie() {
+  var udid = readCookie("udid-local");
+  caches.open("udidURL").then((cache) => {
+    cache
+      .match(window.location.origin + "/cookie", {
+        ignoreSearch: true,
+      })
+      .then((response) => response.json())
+      .then((body) => {
+        console.log('Ln 142');
+        console.log(udid);
+        if (body.udid && udid == undefined) {
+          /// and if cookie is empty
+          console.log(body.udid);
+          createCookie("udid-local", body.udid, 3000);
+        } else {
+          console.log('UDID not empty');
+        }
+      })
+      .catch((err) => {
+        console.log("Not cached yet");
+      });
+  });
+}
+
+setTimeout(() => {
+  setUDIDFromCookie();
+  //this is for setting cookie from server
+}, 1000);
+
+setUDIDToCookie();

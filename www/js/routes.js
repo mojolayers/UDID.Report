@@ -21,11 +21,11 @@ var routes = [
       var isEnrolled = false;
 
       // Check if device is enrolled via cookies.
-      if (!("udid" in cookie)) {
+      if (!("udid-local" in cookie)) {
         // No Exisiting Enrollment Found.
         udidCookie = 'No UDID Saved, please Enroll.';
       } else {
-        udidCookie = cookie['udid'];
+        udidCookie = cookie['udid-local'];
         isEnrolled = true;
       }
 
@@ -64,11 +64,11 @@ var routes = [
       var isEnrolled = false;
 
       // Check if device is enrolled via cookies.
-      if (!("udid" in cookie)) {
+      if (!("udid-local" in cookie)) {
         // No Exisiting Enrollment Found.
         udidCookie = 'No UDID Saved, please Enroll.';
       } else {
-        udidCookie = cookie['udid'];
+        udidCookie = cookie['udid-local'];
         isEnrolled = true;
       }
 

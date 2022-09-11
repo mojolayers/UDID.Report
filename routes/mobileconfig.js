@@ -57,6 +57,12 @@ exports.validate = function(req, res){
     }
 };
 
+exports.cookie = function(req, res) {
+    var cookie = req.cookies.udid;
+    res.status(200);
+    res.json({udid: cookie});
+}
+
 function extractValidUdid (udid) {
     const match = udid.match(/(0000[\d]{4}-00[A-Fa-f\d]+)|([a-fA-F\d]{40})/);
 
