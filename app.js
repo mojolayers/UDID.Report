@@ -41,7 +41,7 @@ app.use(helmet({
 
 app.get('/', routes.index);
 
-app.post('/validate', mobconf.validate);
+app.post('/validate', routes.validate);
 app.get('/paper_plane', mobconf.paper_plane);
 app.get('/app', routes.index);
 
