@@ -17,21 +17,21 @@ var routes = [
       
       // Access Cookies
       const cookie = Object.fromEntries(document.cookie.split('; ').map(c => c.split('=')));
-      var udidCookie = "";
+      var udidFromCookie = "";
       var isEnrolled = false;
 
       // Check if device is enrolled via cookies.
-      if (!("udid-local" in cookie)) {
+      if (!("udid" in cookie)) {
         // No Exisiting Enrollment Found.
-        udidCookie = 'No UDID Saved, please Enroll.';
+        udidFromCookie = 'No UDID Saved, please Enroll.';
       } else {
-        udidCookie = cookie['udid-local'];
+        udidFromCookie = cookie['udid'];
         isEnrolled = true;
       }
 
       var deviceProfile = {
         id: 0,
-        udid: udidCookie,
+        udid: udidFromCookie,
         isEnrolled: isEnrolled
       };
 
@@ -64,11 +64,11 @@ var routes = [
       var isEnrolled = false;
 
       // Check if device is enrolled via cookies.
-      if (!("udid-local" in cookie)) {
+      if (!("udid" in cookie)) {
         // No Exisiting Enrollment Found.
         udidCookie = 'No UDID Saved, please Enroll.';
       } else {
-        udidCookie = cookie['udid-local'];
+        udidCookie = cookie['udid'];
         isEnrolled = true;
       }
 

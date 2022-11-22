@@ -43,7 +43,6 @@ app.get('/', routes.index);
 
 app.post('/validate', mobconf.validate);
 app.get('/paper_plane', mobconf.paper_plane);
-app.get('/cookie', mobconf.cookie);
 app.get('/app', routes.index);
 
 
